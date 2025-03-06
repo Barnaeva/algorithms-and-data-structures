@@ -1,4 +1,4 @@
 int main() {
-	int a = 4;//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	int a = 4;//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 	return 0;
 }
