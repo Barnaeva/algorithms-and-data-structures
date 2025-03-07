@@ -1,7 +1,7 @@
 struct Node {
 	int _info;
-	Node *_right,*_left;
-	Node(const int& info) :_info(info),_right(nullptr),_left(nullptr){}
+	Node* _right, * _left;
+	Node(const int& info) :_info(info), _right(nullptr), _left(nullptr) {}
 };
 
 class BinaryTree {
@@ -19,11 +19,11 @@ private:
 		}
 	}
 public:
-	BinaryTree():_root(nullptr) {}
+	BinaryTree() :_root(nullptr) {}
 	BinaryTree(const BinaryTree& other) {
-//AAAAAAAAAAAA
+		//AAAAAAAAAAAA
 	}
 
-	
+
 
 };
