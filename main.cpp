@@ -1,4 +1,9 @@
+#include <iostream>
+
+
 int main() {
-	int a = 4;//спасибо юля!
+	std::cout << "hello world";
+	int a = 5;
+	int a = 5;
 	return 0;
 }
