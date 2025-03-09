@@ -64,22 +64,49 @@ private:
 			return contains(node->_right,value);
 		}
 	}
-	bool erase(Node* node, int value) {
+	bool erase(Node*& node, int value) {
 		if (node == nullptr) {
 			return false;
 		}
 		else if (value == node->_info) {
-			if(node==nullptr)
-			delete node;
-			return true;
+			if (node->_left == nullptr && node->_right == nullptr) {
+				delete node;
+				node = nullptr;
+				return true;
+			}
+			else if (node->_left != nullptr && node->_right == nullptr) {
+				Node* tmp = node;
+				node = node->_left;
+				delete tmp;
+				return true;
+			}
+			else if (node->_right != nullptr && node->_left == nullptr) {
+				Node* tmp = node;
+				node = node->_right;
+				delete tmp;
+				return true;
+			}
+			else {
+				Node* tmp = minNode(node->_right);
+				node->_info = tmp->_info;
+				return erase(node->_right, tmp->_info);
+			}
 		}
 		else if (value < node->_info) {
 			return erase(node->_left, value);
 		}
-		else if (value > node->_info) {
-			return erase((node->_right, value);
+		else {
+			return erase(node->_right, value);
 		}
+	}
 
+	Node* minNode(Node* node) {
+		if (node->_left == nullptr) {
+			return node;
+		}
+		else {
+			return minNode(node->_left);
+		}
 	}
 
 public:
@@ -113,5 +140,8 @@ public:
 	}
 	bool contains(int value) {
 		return contains(_root, value);
+	}
+	bool erase(int value) {
+		return erase(_root, value);
 	}
 };
