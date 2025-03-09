@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 struct Node {
 	int _info;
 	Node* _right, * _left;
@@ -7,17 +9,24 @@ struct Node {
 class BinaryTree {
 private:
 	Node* _root;
-	void insert(Node*& node, int value) {
-		if (node == nullptr) {
+
+	bool insert(Node*& node, int value) {
+		if (value==node->_info) {
+			cout << "this value is already in the tree." << endl;
+			return false;
+		}
+		else if (node == nullptr) {
 			node = new Node(value);
+			return true;
 		}
 		else if (value < node->_info) {
-			insert(node->_left, value);
+			return insert(node->_left, value);
 		}
 		else if (value > node->_info) {
-			insert(node->_right, value);
+			return insert(node->_right, value);
 		}
 	}
+
 	Node* copy(Node*& node) {
 		if (node == nullptr) {
 			return nullptr;
@@ -25,6 +34,7 @@ private:
 		Node* newNode = new Node(node->_info);
 		newNode->_left = copy(node->_left);
 		newNode->_right = copy(node->_right);
+		return newNode;
 	}
 	void popNode(Node*& node) {
 		if (node == nullptr) {
@@ -33,15 +43,57 @@ private:
 			delete node;
 		}
 	}
+	void print(Node* node) const {
+		if (node != nullptr) {
+			print(node->_left);
+			cout << node->_info<<" ";			
+			print(node->_right);
+		}
+	}
+	bool contains(Node* node, int value) {
+		if (node == nullptr) {
+			return false;
+		}
+		else if (value == node->_info) {
+			return true;
+		}
+		else if (value < node->_info) {
+			return contains(node->_left,value);
+		}
+		else if (value > node->_info) {
+			return contains(node->_right,value);
+		}
+	}
+	bool erase(Node* node, int value) {
+		if (node == nullptr) {
+			return false;
+		}
+		else if (value == node->_info) {
+			if(node==nullptr)
+			delete node;
+			return true;
+		}
+		else if (value < node->_info) {
+			return erase(node->_left, value);
+		}
+		else if (value > node->_info) {
+			return erase((node->_right, value);
+		}
+
+	}
+
 public:
 	BinaryTree() :_root(nullptr) {}
+
 	BinaryTree(const BinaryTree& other) {
 		copy(other._root);
 		popNode(other._root);
 	}
+
 	~BinaryTree() {
 		popNode(_root);
 	}
+
 	BinaryTree operator=(const BinaryTree& other) {
 		if (this != other) {
 			popNode(_root);
@@ -50,5 +102,16 @@ public:
 		return *this;
 	}
 
+	void print() const {
+		cout << "Binary Tree:";
+		print(_root);
+		cout << endl;
+	}
 
+	bool insert(int value) {
+		return insert(_root, value);
+	}
+	bool contains(int value) {
+		return contains(_root, value);
+	}
 };
