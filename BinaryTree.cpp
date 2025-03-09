@@ -68,35 +68,34 @@ private:
 		if (node == nullptr) {
 			return false;
 		}
-		else if (value == node->_info) {
+
+		if (value < node->_info) {
+			return erase(node->_left, value);
+		}
+		else if (value > node->_info) {
+			return erase(node->_right, value);
+		}
+		else {
 			if (node->_left == nullptr && node->_right == nullptr) {
 				delete node;
 				node = nullptr;
-				return true;
 			}
-			else if (node->_left != nullptr && node->_right == nullptr) {
-				Node* tmp = node;
-				node = node->_left;
-				delete tmp;
-				return true;
-			}
-			else if (node->_right != nullptr && node->_left == nullptr) {
+			else if (node->_left == nullptr) {
 				Node* tmp = node;
 				node = node->_right;
 				delete tmp;
-				return true;
+			}
+			else if (node->_right == nullptr) {
+				Node* tmp = node;
+				node = node->_left;
+				delete tmp;
 			}
 			else {
-				Node* tmp = minNode(node->_right);
-				node->_info = tmp->_info;
-				return erase(node->_right, tmp->_info);
+				Node* minNode = minNode(node->_right);
+				node->_info = minNode->_info;
+				erase(node->_right, minNode->_info);
 			}
-		}
-		else if (value < node->_info) {
-			return erase(node->_left, value);
-		}
-		else {
-			return erase(node->_right, value);
+			return true;
 		}
 	}
 
