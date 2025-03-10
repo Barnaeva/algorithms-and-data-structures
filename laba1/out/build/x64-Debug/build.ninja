@@ -50,21 +50,21 @@ cmake_ninja_workdir = C$:\Users\barna\Desktop\A&DS\algorithms-and-data-structure
 build cmake_object_order_depends_target_laba1: phony || .
 
 build CMakeFiles\laba1.dir\main.cpp.obj: CXX_COMPILER__laba1_unscanned_Debug C$:\Users\barna\Desktop\A&DS\algorithms-and-data-structures\laba1\main.cpp || cmake_object_order_depends_target_laba1
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20 /W4
   OBJECT_DIR = CMakeFiles\laba1.dir
   OBJECT_FILE_DIR = CMakeFiles\laba1.dir
   TARGET_COMPILE_PDB = CMakeFiles\laba1.dir\
   TARGET_PDB = laba1.pdb
 
 build CMakeFiles\laba1.dir\BST.cpp.obj: CXX_COMPILER__laba1_unscanned_Debug C$:\Users\barna\Desktop\A&DS\algorithms-and-data-structures\laba1\BST.cpp || cmake_object_order_depends_target_laba1
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20 /W4
   OBJECT_DIR = CMakeFiles\laba1.dir
   OBJECT_FILE_DIR = CMakeFiles\laba1.dir
   TARGET_COMPILE_PDB = CMakeFiles\laba1.dir\
   TARGET_PDB = laba1.pdb
 
 build CMakeFiles\laba1.dir\timeTest.cpp.obj: CXX_COMPILER__laba1_unscanned_Debug C$:\Users\barna\Desktop\A&DS\algorithms-and-data-structures\laba1\timeTest.cpp || cmake_object_order_depends_target_laba1
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20 /W4
   OBJECT_DIR = CMakeFiles\laba1.dir
   OBJECT_FILE_DIR = CMakeFiles\laba1.dir
   TARGET_COMPILE_PDB = CMakeFiles\laba1.dir\

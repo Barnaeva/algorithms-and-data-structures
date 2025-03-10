@@ -24,6 +24,9 @@ BinaryTree& BinaryTree::operator=(const BinaryTree& other) {
 }
 
 bool BinaryTree::insert(Node*& node, int value) {
+    if (contains(value)){
+        return false;
+    }
     if (node == nullptr) {
         node = new Node(value);
         return true;
@@ -56,6 +59,10 @@ void BinaryTree::popNode(Node*& node) {
         delete node;
         node = nullptr;
     }
+}
+void BinaryTree::clear()
+{
+    popNode(_root);
 }
 
 void BinaryTree::print(Node* node) const {

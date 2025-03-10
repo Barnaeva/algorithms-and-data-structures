@@ -30,4 +30,5 @@ public:
     bool erase(int value);
     bool operator!=(const BinaryTree& other) const;
     bool operator==(const BinaryTree& other) const;
+    void clear();
 };
