@@ -1,4 +1,4 @@
-#include "BST.h"
+#include "BinaryTree.h"
 #include <iostream>
 
 using namespace std;
@@ -153,4 +153,15 @@ void BinaryTree::print() const {
     cout << "Binary Tree: ";
     print(_root);
     cout << endl;
+}
+void BinaryTree::inOrderTraversal(std::vector<int>& result) const {
+    inOrderTraversal(_root, result);
+}
+
+void BinaryTree::inOrderTraversal(Node* node, std::vector<int>& result) const {
+    if (node != nullptr) {
+        inOrderTraversal(node->_left, result);
+        result.push_back(node->_info);
+        inOrderTraversal(node->_right, result);
+    }
 }

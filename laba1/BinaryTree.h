@@ -1,3 +1,4 @@
+#include <vector>
 #pragma once
 
 struct Node {
@@ -18,6 +19,7 @@ private:
     bool contains(Node* node, int value) const;
     bool erase(Node*& node, int value);
     bool compareTrees(Node* node1, Node* node2) const;
+    void inOrderTraversal(Node* node, std::vector<int>& result) const;
 
 public:
     BinaryTree();
@@ -31,4 +33,5 @@ public:
     bool operator!=(const BinaryTree& other) const;
     bool operator==(const BinaryTree& other) const;
     void clear();
+    void inOrderTraversal(std::vector<int>& result) const;
 };

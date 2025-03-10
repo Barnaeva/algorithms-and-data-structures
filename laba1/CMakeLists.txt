@@ -9,4 +9,4 @@ else()
     add_compile_options(-Wall -Wextra -pedantic)
 endif()
 
-add_executable("laba1" "main.cpp" "BST.h" "BST.cpp" "timeTest.cpp")
+add_executable("laba1" "main.cpp" "BinaryTree.h" "BinaryTree.cpp" "TimeTest.h")
