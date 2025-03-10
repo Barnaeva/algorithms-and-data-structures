@@ -150,7 +150,6 @@ bool BinaryTree::erase(int value) {
 }
 
 void BinaryTree::print() const {
-    cout << "Binary Tree: ";
     print(_root);
     cout << endl;
 }

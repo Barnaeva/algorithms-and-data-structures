@@ -5,6 +5,13 @@
 
 using namespace std;
 
+void printVector(const vector<int>& vec) {
+    for (const auto& num : vec) {
+        cout << num << " ";
+    }
+    cout << endl;
+}
+
 void extractDuplicates(Node* node, vector<int>& duplicates) {
     if (node != nullptr) {
         extractDuplicates(node->_left, duplicates);

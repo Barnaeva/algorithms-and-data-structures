@@ -110,7 +110,8 @@
 			"sourceIndexes" : 
 			[
 				1,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -136,6 +137,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "TimeTest.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Duplicates.h",
 			"sourceGroupIndex" : 1
 		}
 	],
