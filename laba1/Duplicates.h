@@ -27,8 +27,7 @@ vector<int> findUnique(const vector<int>& vec) {
     }
 
     vector<int> unique;
-    //drojgirtjhijrthjrthjrt9hjrotjhortjnojrtojh9rj59yj59jhprt
-    //idghjfbojerphjerjhgope
+
     tree.inOrderTraversal(unique);
 
     return unique;

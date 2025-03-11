@@ -23,6 +23,7 @@ private:
 
 public:
     BinaryTree();
+
     BinaryTree(const BinaryTree& other);
     ~BinaryTree();
     BinaryTree& operator=(const BinaryTree& other);

@@ -37,7 +37,7 @@ int main() {
         copiedTree.print();
         cout << endl;
 
-        /*vector<size_t> sizes = {1000, 10000, 100000};
+        vector<size_t> sizes = {1000, 10000, 100000};
 
         for (size_t size : sizes) {
             measureFillTimeTree(size);
@@ -48,12 +48,11 @@ int main() {
             measureAddRemoveTimeVector(size);
         }
 
-        */
 
         vector<int> vec = { 3, 2, 2, 4, 2, 5, 6, 4, 3, 70, 5, 33, 55, 8, 6, 9};
         cout << "Vector:";
         printVector(vec);
-        vector<int> duplicates = findDuplicates(vec);
+        vector<int> duplicates = findUnique(vec);
 
         cout << "Duplicates: ";
         for (const auto& num : duplicates) {
