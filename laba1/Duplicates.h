@@ -12,36 +12,25 @@ void printVector(const vector<int>& vec) {
     cout << endl;
 }
 
-void extractDuplicates(Node* node, vector<int>& duplicates) {
-    if (node != nullptr) {
-        extractDuplicates(node->_left, duplicates);
-        duplicates.push_back(node->_info);
-        extractDuplicates(node->_right, duplicates);
-    }
-}
-
-vector<int> findDuplicates(const vector<int>& vec) {
-    unordered_map<int, int> countMap;
+vector<int> findUnique(const vector<int>& vec) {
     BinaryTree tree;
-
-    for (const auto& num : vec) {
-        if (countMap.find(num) != countMap.end()) {
-            countMap[num]++;
-        }
-        else {
-            countMap[num] = 1;
-        }
-    }
-
-    for (const auto& pair : countMap) {
-        if (pair.second > 1) {
-            tree.insert(pair.first);
-        }
-    }
-
     vector<int> duplicates;
-    tree.inOrderTraversal(duplicates);
 
-    return duplicates;
+    for (int x : vec) {
+        if (!tree.insert(x)) duplicates.push_back(x);
+    }
+
+    for (int x : duplicates) {
+        if (tree.contains(x)) {
+            tree.erase(x);
+        }
+    }
+
+    vector<int> unique;
+    //drojgirtjhijrthjrthjrt9hjrotjhortjnojrtojh9rj59yj59jhprt
+    //idghjfbojerphjerjhgope
+    tree.inOrderTraversal(unique);
+
+    return unique;
 }
 
