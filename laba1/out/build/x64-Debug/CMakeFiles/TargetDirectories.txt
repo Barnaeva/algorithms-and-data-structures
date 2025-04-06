@@ -1,3 +1,0 @@
-C:/Users/barna/Desktop/A&DS/algorithms-and-data-structures/laba1/out/build/x64-Debug/CMakeFiles/laba1.dir
-C:/Users/barna/Desktop/A&DS/algorithms-and-data-structures/laba1/out/build/x64-Debug/CMakeFiles/edit_cache.dir
-C:/Users/barna/Desktop/A&DS/algorithms-and-data-structures/laba1/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
